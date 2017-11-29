@@ -1,0 +1,38 @@
+package:
+    name: cppzmq
+    version: 4.2.1
+source:
+    fn: cppzmq-4.2.1.tar.gz
+    sha256: 11c699001659336c7d46779f714f3e9d15d63343cd2ae7c1905e4bf58907cef9
+    url: https://github.com/zeromq/cppzmq/archive/v4.2.1.tar.gz
+build:
+    noarch: ''
+    noarch_python: false
+    number: '0'
+    string: '0'
+requirements:
+    build:
+        - cmake
+        - toolchain
+        - zeromq 4.2.1
+        - gcc-7                       # [linux and not armv7l]
+    run:
+        - zeromq 4.2.1
+        - vs2015_runtime              # [win]
+        - libgcc-7                    # [linux and not armv7l]
+test:
+    commands:
+        - if exist %LIBRARY_PREFIX%\share\cmake\cppzmq\cppzmqConfig.cmake (exit 0) else (exit 1)        # [win]
+        - if exist %LIBRARY_PREFIX%\share\cmake\cppzmq\cppzmqConfigVersion.cmake (exit 0) else (exit 1) # [win]
+        - test -f $PREFIX\share\cmake\cppzmq\cppzmqConfig.cmake                                         # [unix]
+        - test -f $PREFIX\share\cmake\cppzmq\cppzmqConfigVersion.cmake                                  # [unix]
+about:
+    home: http://zeromq.org
+    license: MIT
+    summary: C++ bindings for 0MQ
+extra:
+    final: true
+    recipe-maintainers:
+        - SylvainCorlay
+        - JohanMabille
+        - gouarin
