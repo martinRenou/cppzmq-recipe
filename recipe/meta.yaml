@@ -24,8 +24,8 @@ test:
     commands:
         - if exist %LIBRARY_PREFIX%\share\cmake\cppzmq\cppzmqConfig.cmake (exit 0) else (exit 1)        # [win]
         - if exist %LIBRARY_PREFIX%\share\cmake\cppzmq\cppzmqConfigVersion.cmake (exit 0) else (exit 1) # [win]
-        - test -f $PREFIX\share\cmake\cppzmq\cppzmqConfig.cmake                                         # [unix]
-        - test -f $PREFIX\share\cmake\cppzmq\cppzmqConfigVersion.cmake                                  # [unix]
+        - test -f $PREFIX/share/cmake/cppzmq/cppzmqConfig.cmake                                         # [unix]
+        - test -f $PREFIX/share/cmake/cppzmq/cppzmqConfigVersion.cmake                                  # [unix]
 about:
     home: http://zeromq.org
     license: MIT
