@@ -9,11 +9,6 @@ environment:
     secure: IgQ0ihtOWOGDj+VRskpoImtpJQaF9LAAwD0rA9/xQXa7fIr3N8+hQM8aAMi/zXC/
 
   matrix:
-    - TARGET_ARCH: x86
-      LLVM_VARIANT: default
-      CONDA_PY: 36
-      CONDA_INSTALL_LOCN: C:\\Miniconda36
-
     - TARGET_ARCH: x64
       LLVM_VARIANT: default
       CONDA_PY: 36
