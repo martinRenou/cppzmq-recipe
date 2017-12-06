@@ -1,27 +1,30 @@
 package:
     name: cppzmq
-    version: 4.2.1
+    version: 4.2.2
 source:
-    fn: cppzmq-4.2.1.tar.gz
+    fn: cppzmq-4.2.2.tar.gz
     sha256: 11c699001659336c7d46779f714f3e9d15d63343cd2ae7c1905e4bf58907cef9
-    url: https://github.com/zeromq/cppzmq/archive/v4.2.1.tar.gz
+    url: https://github.com/zeromq/cppzmq/archive/v4.2.2.tar.gz
 build:
     noarch: ''
     noarch_python: false
     number: '0'
     string: '0'
     skip: true  # [win and py<35]
-    features:   # [win]
+    features:
+        - cling
         - vc14    # [win]
 
 requirements:
     build:
+        - cling-patches
         - cmake
         - toolchain
-        - zeromq 4.2.1
+        - zeromq 4.2.2
         - gcc-7                       # [linux and not armv7l]
     run:
-        - zeromq 4.2.1
+        - cling-patches
+        - zeromq 4.2.2
         - vs2015_runtime              # [win]
         - libgcc-7                    # [linux and not armv7l]
 test:
