@@ -3,13 +3,13 @@ package:
     version: 4.2.2
 source:
     fn: cppzmq-4.2.2.tar.gz
-    sha256: 11c699001659336c7d46779f714f3e9d15d63343cd2ae7c1905e4bf58907cef9
+    sha256: 3ef50070ac5877c06c6bb25091028465020e181bbfd08f110294ed6bc419737d
     url: https://github.com/zeromq/cppzmq/archive/v4.2.2.tar.gz
 build:
     noarch: ''
     noarch_python: false
     number: '0'
-    string: '0'
+    string: 'cling_0'
     skip: true  # [win and py<35]
     features:
         - cling
