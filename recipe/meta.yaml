@@ -20,11 +20,11 @@ requirements:
         - cling-patches
         - cmake
         - toolchain
-        - zeromq 4.2.2
+        - zeromq 4.2.3
         - gcc-7                       # [linux and not armv7l]
     run:
         - cling-patches
-        - zeromq 4.2.2
+        - zeromq 4.2.3
         - vs2015_runtime              # [win]
         - libgcc-7                    # [linux and not armv7l]
 test:
